@@ -16,6 +16,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "CV Builder",
   description: "A CV builder for Alice",
+  icons: {
+    icon: "/public/logo.svg",  // This sets the favicon
+  },
 };
 
 export default function RootLayout({

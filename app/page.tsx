@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Dialog,
@@ -246,13 +247,15 @@ export default function Home() {
           </Card>
           {cv.sections.map((section, sectionIndex) => (
             <Card key={sectionIndex} className="mb-4">
-              <CardHeader className="sticky top-0 bg-background z-10 flex flex-row items-center justify-between">
+              <CardHeader className={cn("sticky top-0 z-10 flex flex-row items-center justify-between rounded-t-xl transition-all ease-linear",
+                collapsedSections[sectionIndex] ? "rounded-b-xl bg-background" : "mb-2 bg-accent rounded-b-3xl border-b"
+              )}>
                 <Input
                   value={section.name}
                   onChange={(e) =>
                     handleSectionNameChange(sectionIndex, e.target.value)
                   }
-                  className="font-bold text-lg w-auto"
+                  className="font-bold text-lg w-full"
                 />
                 <div className="flex items-center gap-2">
                   <Button
