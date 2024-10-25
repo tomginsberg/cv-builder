@@ -248,7 +248,7 @@ export default function Home() {
           {cv.sections.map((section, sectionIndex) => (
             <Card key={sectionIndex} className="mb-4">
               <CardHeader className={cn("sticky top-0 z-10 flex flex-row items-center justify-between rounded-t-xl transition-all ease-linear",
-                collapsedSections[sectionIndex] ? "rounded-b-xl bg-background" : "mb-2 bg-accent rounded-b-3xl border-b"
+                collapsedSections[sectionIndex] ? "rounded-b-xl bg-background" : "mb-2 bg-accent rounded-b-none border-b"
               )}>
                 <Input
                   value={section.name}
